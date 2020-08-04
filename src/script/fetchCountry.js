@@ -1,3 +1,10 @@
+function fetchCountries(query) {
+    const url = `https://restcountries.eu/rest/v2/name/${query}?fields=name;population;flag;languages;capital`;
 
+    return fetch(url)
+        .then(res => res.json())
+        .catch(error => console.log(error));
 
-fetch('https://restcountries.eu/rest/v2/name/UkR').then(res => res.json()).then(data => console.log(data));
+}
+
+export default fetchCountries;

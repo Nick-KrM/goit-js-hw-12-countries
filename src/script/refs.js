@@ -1,5 +1,5 @@
 const refs = {
-    input: document.getElementById('#inputlg'),
+    input: document.getElementById('inputlg'),
     results: document.querySelector('.results'),
 };
 
