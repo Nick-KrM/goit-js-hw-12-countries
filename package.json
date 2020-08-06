@@ -26,6 +26,7 @@
     "@babel/preset-env": "^7.11.0",
     "@pnotify/bootstrap3": "^5.1.2",
     "@pnotify/bootstrap4": "^5.1.2",
+    "@pnotify/core": "^5.1.2",
     "@pnotify/glyphicon": "^5.1.2",
     "autoprefixer": "^9.8.6",
     "babel-loader": "^8.1.0",
