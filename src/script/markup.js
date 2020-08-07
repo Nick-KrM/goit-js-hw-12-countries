@@ -39,9 +39,9 @@ function markup(e) {
             };
         })
         .catch(() => {
-            // if (inputValue !== '') {
-            //     refs.results.innerHTML = incorrectRequest();
-            // }
+            if (inputValue !== '') {
+                refs.results.innerHTML = incorrectRequest();
+            }
             console.log('some error')
         });
 
