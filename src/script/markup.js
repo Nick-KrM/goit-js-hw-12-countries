@@ -4,21 +4,14 @@ import IncompleteRequest from '../templates/IncompleteRequest.hbs';
 import incorrectRequest from '../templates/incorrectRequest.hbs';
 import refs from './refs';
 
-
-// function fetchCountries(inputValue) {
-//     const url = `https://restcountries.eu/rest/v2/name/${inputValue}?fields=name;population;flag;languages;capital`;
-
-//     return fetch(url)
-//         .then(res => res.json())
-//         .catch(error => console.log(error));
-
-// }
-
 function markup(e) {
     e.preventDefault();
     const inputValue = e.target.value;
     const url = `https://restcountries.eu/rest/v2/name/${inputValue}`;
-
+    if (!inputValue) {
+        refs.results.innerHTML = '';
+        return
+    }
     return fetch(url)
         .then(res => {
             if (res.ok) {
@@ -46,8 +39,9 @@ function markup(e) {
             };
         })
         .catch(() => {
-            if (inputValue !== '')
-                refs.results.innerHTML = incorrectRequest();
+            // if (inputValue !== '') {
+            //     refs.results.innerHTML = incorrectRequest();
+            // }
             console.log('some error')
         });
 
