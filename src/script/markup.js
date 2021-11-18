@@ -7,11 +7,13 @@ import refs from './refs';
 function markup(e) {
     e.preventDefault();
     const inputValue = e.target.value;
-    const url = `https://restcountries.eu/rest/v2/name/${inputValue}`;
+    const url = `https://restcountries.com/v2/name/${inputValue}`;
+
     if (!inputValue) {
         refs.results.innerHTML = '';
         return
     }
+
     return fetch(url)
         .then(res => {
             if (res.ok) {
@@ -30,6 +32,7 @@ function markup(e) {
 
             if (data.length === 1) {
                 refs.results.insertAdjacentHTML('beforeend', resultCountry(data));
+                console.log(data);
                 return
             };
 
